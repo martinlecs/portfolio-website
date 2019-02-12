@@ -9,6 +9,8 @@ import Input from "@material-ui/core/Input";
 import Button from "@material-ui/core/Button";
 import Avatar from "@material-ui/core/Avatar";
 import NoteAdd from "@material-ui/icons/NoteAdd";
+import { connect } from "react-redux";
+import { addProject } from "../../store/actions/projectActions";
 
 //TODO: Format the form better
 
@@ -68,7 +70,7 @@ const InputField = props => {
   );
 };
 
-class CreateProject extends Component {
+class AddProject extends Component {
   state = {
     name: "",
     summary: "",
@@ -86,7 +88,7 @@ class CreateProject extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
+    this.props.addProject(this.state);
   };
 
   render() {
@@ -131,8 +133,19 @@ class CreateProject extends Component {
   }
 }
 
-CreateProject.propTypes = {
+AddProject.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(CreateProject);
+const mapDispatchToProps = dispatch => {
+  return {
+    addProject: project => dispatch(addProject(project))
+  };
+};
+
+export default withStyles(styles)(
+  connect(
+    null,
+    mapDispatchToProps
+  )(AddProject)
+);

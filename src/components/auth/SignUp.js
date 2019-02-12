@@ -1,15 +1,12 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import withStyles from "@material-ui/core/styles/withStyles";
-import { FormControl, Paper, Typography } from "@material-ui/core";
-import InputLabel from "@material-ui/core/InputLabel";
-import Input from "@material-ui/core/Input";
-import Button from "@material-ui/core/Button";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
-import Avatar from "@material-ui/core/Avatar";
-import LockOutlinedIcon from "@material-ui/icons/Lock";
-import PersonAdd from "@material-ui/icons/PersonAdd";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import withStyles from '@material-ui/core/styles/withStyles';
+import { FormControl, Paper, Typography } from '@material-ui/core';
+import InputLabel from '@material-ui/core/InputLabel';
+import Input from '@material-ui/core/Input';
+import Button from '@material-ui/core/Button';
+import Avatar from '@material-ui/core/Avatar';
+import PersonAdd from '@material-ui/icons/PersonAdd';
 
 const styles = theme => ({
   main: {

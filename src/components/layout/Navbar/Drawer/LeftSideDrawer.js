@@ -48,7 +48,7 @@ class LeftSideDrawer extends Component {
                 </IconButton>
               </div>
               <Divider />
-              <SignedOutDrawerList />
+              <SignedInDrawerList />
             </Drawer>
           </React.Fragment>
         )}

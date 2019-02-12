@@ -9,7 +9,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ProjectDetails from "./components/projects/ProjectDetails";
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
-import CreateProject from "./components/projects/CreateProject";
+import AddProject from "./components/projects/AddProject";
 
 export const DrawerContext = createContext({ open: false });
 
@@ -49,7 +49,7 @@ class App extends Component {
                   <Route path="/project/:slug" component={ProjectDetails} />
                   <Route path="/signin" component={SignIn} />
                   <Route path="/signup" component={SignUp} />
-                  <Route path="/createproject" component={CreateProject} />
+                  <Route path="/addproject" component={AddProject} />
                 </Main>
               </Switch>
             </div>

@@ -28,7 +28,7 @@ const SignedInDrawerList = () => {
         <ListItemText primary="Project List" />
       </ListItem>
 
-      <ListItem button component={NavLink} to="/">
+      <ListItem button component={NavLink} to="/addproject">
         <ListItemIcon>
           <NoteAdd />
         </ListItemIcon>

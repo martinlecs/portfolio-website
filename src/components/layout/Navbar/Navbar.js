@@ -9,6 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { DrawerContext } from '../../../App';
 import LeftSideDrawer from './Drawer/LeftSideDrawer';
+import { NavLink } from 'react-router-dom';
 
 const styles = theme => ({
   root: {
@@ -37,12 +38,17 @@ const styles = theme => ({
   },
   hide: {
     display: "none"
-  }
+  },
 });
 
 const Title = () => {
   return (
-    <Typography variant="h3" color="inherit">
+    <Typography
+      variant="h3"
+      color="inherit"
+      component={NavLink}
+      to="/"
+    >
       Martin's Portfolio
     </Typography>
   );

@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
-import { Typography } from "@material-ui/core";
 import CardComponent from "./CardComponent";
-import { cardData } from "./CardData";
+import { connect } from "react-redux";
 
 const styles = theme => ({
   root: {
@@ -13,8 +12,7 @@ const styles = theme => ({
 
 class Home extends Component {
   render() {
-    const { classes } = this.props;
-    const data = cardData;
+    const { classes, projects } = this.props;
 
     return (
       <Grid
@@ -25,7 +23,7 @@ class Home extends Component {
         justify="flex-start"
         alignItems="flex-start"
       >
-          {data.map(card => (
+          {projects.map(card => (
             <CardComponent key={card.id} data={card} />
           ))}
       </Grid>
@@ -33,4 +31,10 @@ class Home extends Component {
   }
 }
 
-export default withStyles(styles)(Home);
+const mapStateToProps = (state) => {
+  return {
+    projects: state.project.projects
+  };
+};
+
+export default withStyles(styles)(connect(mapStateToProps)(Home));
