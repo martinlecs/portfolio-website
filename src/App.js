@@ -1,11 +1,17 @@
 import React, { Component, createContext } from "react";
-import Main from "./components/layout/Main";
+import Main from "./components/hoc/Main";
+import Home from "./components/home/Home";
 import Navbar from "./components/layout/Navbar/Navbar";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import { theme } from "./components/themes/MuiTheme";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import ProjectDetails from "./components/projects/ProjectDetails";
+import SignIn from "./components/auth/SignIn";
+import SignUp from "./components/auth/SignUp";
+import CreateProject from "./components/projects/CreateProject";
 
-export const DrawerContext = createContext({ open: false});
+export const DrawerContext = createContext({ open: false });
 
 class MyProvider extends Component {
   state = {
@@ -14,18 +20,19 @@ class MyProvider extends Component {
 
   render() {
     return (
-      <DrawerContext.Provider value={{
-        state: this.state,
-        toggleDrawer: () => {
-          this.setState( state => ({open: !state.open}))
-        }
-      }}>
+      <DrawerContext.Provider
+        value={{
+          state: this.state,
+          toggleDrawer: () => {
+            this.setState(state => ({ open: !state.open }));
+          }
+        }}
+      >
         {this.props.children}
       </DrawerContext.Provider>
     );
   }
 }
-
 
 class App extends Component {
   render() {
@@ -33,10 +40,20 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
         <MyProvider>
-          <div className="App">
+          <BrowserRouter>
+            <div className="App">
               <Navbar />
-              <Main/>
-          </div>
+              <Switch>
+                <Main>
+                  <Route exact path="/" component={Home} />
+                  <Route path="/project/:slug" component={ProjectDetails} />
+                  <Route path="/signin" component={SignIn} />
+                  <Route path="/signup" component={SignUp} />
+                  <Route path="/createproject" component={CreateProject} />
+                </Main>
+              </Switch>
+            </div>
+          </BrowserRouter>
         </MyProvider>
       </MuiThemeProvider>
     );

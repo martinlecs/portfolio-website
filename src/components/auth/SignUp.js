@@ -9,6 +9,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Avatar from "@material-ui/core/Avatar";
 import LockOutlinedIcon from "@material-ui/icons/Lock";
+import PersonAdd from "@material-ui/icons/PersonAdd";
 
 const styles = theme => ({
   main: {
@@ -47,6 +48,8 @@ class SignIn extends Component {
   state = {
     email: "",
     password:"",
+    firstName: "",
+    lastName: "",
   };
 
   handleChange = event => {
@@ -66,10 +69,10 @@ class SignIn extends Component {
       <main className={classes.main}>
         <Paper className={classes.paper}>
           <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
+            <PersonAdd />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Sign up
           </Typography>
           <form
             className={classes.form}
@@ -95,10 +98,24 @@ class SignIn extends Component {
                 onChange={this.handleChange}
               />
             </FormControl>
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
+            <FormControl margin="normal" required fullWidth>
+              <InputLabel htmlFor="firstName">First Name</InputLabel>
+              <Input
+                id="firstName"
+                name="firstName"
+                autoComplete="firstName"
+                onChange={this.handleChange}
+              />
+            </FormControl>
+            <FormControl margin="normal" required fullWidth>
+              <InputLabel htmlFor="lastName">Last Name</InputLabel>
+              <Input
+                id="lastName"
+                name="lastName"
+                autoComplete="lastName"
+                onChange={this.handleChange}
+              />
+            </FormControl>
             <Button
               type="submit"
               fullWidth
@@ -106,7 +123,7 @@ class SignIn extends Component {
               color="primary"
               className={classes.submit}
             >
-              Sign in
+              Sign up
             </Button>
           </form>
         </Paper>
