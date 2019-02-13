@@ -1,13 +1,12 @@
-import React, { Component } from "react";
+import Divider from '@material-ui/core/Divider';
+import Drawer from '@material-ui/core/Drawer';
+import IconButton from '@material-ui/core/IconButton';
+import { withStyles } from '@material-ui/core/styles';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import PropTypes from 'prop-types';
-import Drawer from "@material-ui/core/Drawer";
-import IconButton from "@material-ui/core/IconButton";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import Divider from "@material-ui/core/Divider";
-import { withStyles } from "@material-ui/core/styles";
-import { DrawerContext } from "../../../../App";
+import React, { Component } from 'react';
+import { DrawerContext } from '../../../context/DrawerContext';
 import SignedInDrawerList from './SignedInDrawerList';
-import SignedOutDrawerList from './SignedOutDrawerList';
 
 const styles = theme => ({
   drawer: {

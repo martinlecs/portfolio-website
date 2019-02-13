@@ -14,6 +14,6 @@ export const addProject = project => {
     //   .catch(err => {
     //     dispatch({ type: "ADD_PROJECT_ERROR", err });
     //   });
-    dispatch({type: "ADD_PROJECT", project})
+    dispatch({ type: "ADD_PROJECT", project });
   };
 };

@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import withStyles from "@material-ui/core/styles/withStyles";
-import FormControl from "@material-ui/core/FormControl";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-import InputLabel from "@material-ui/core/InputLabel";
-import Input from "@material-ui/core/Input";
-import Button from "@material-ui/core/Button";
-import Avatar from "@material-ui/core/Avatar";
-import NoteAdd from "@material-ui/icons/NoteAdd";
-import { connect } from "react-redux";
-import { addProject } from "../../store/actions/projectActions";
+import Avatar from '@material-ui/core/Avatar';
+import Button from '@material-ui/core/Button';
+import FormControl from '@material-ui/core/FormControl';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import Paper from '@material-ui/core/Paper';
+import withStyles from '@material-ui/core/styles/withStyles';
+import Typography from '@material-ui/core/Typography';
+import NoteAdd from '@material-ui/icons/NoteAdd';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addProject } from '../../store/actions/projectActions';
 
 //TODO: Format the form better
 

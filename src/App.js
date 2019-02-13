@@ -1,39 +1,18 @@
-import React, { Component, createContext } from "react";
-import Main from "./components/hoc/Main";
-import Home from "./components/home/Home";
-import Navbar from "./components/layout/Navbar/Navbar";
-import { MuiThemeProvider } from "@material-ui/core/styles";
-import { theme } from "./components/themes/MuiTheme";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import ProjectDetails from "./components/projects/ProjectDetails";
-import SignIn from "./components/auth/SignIn";
-import SignUp from "./components/auth/SignUp";
-import AddProject from "./components/projects/AddProject";
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import SignIn from './components/auth/SignIn';
+import SignUp from './components/auth/SignUp';
+import { MyProvider } from './components/context/DrawerContext';
+import Main from './components/hoc/Main';
+import Home from './components/home/Home';
+import Navbar from './components/layout/Navbar/Navbar';
+import AddProject from './components/projects/AddProject';
+import ProjectDetails from './components/projects/ProjectDetails';
+import { theme } from './components/themes/MuiTheme';
 
-export const DrawerContext = createContext({ open: false });
-
-class MyProvider extends Component {
-  state = {
-    open: false
-  };
-
-  render() {
-    return (
-      <DrawerContext.Provider
-        value={{
-          state: this.state,
-          toggleDrawer: () => {
-            this.setState(state => ({ open: !state.open }));
-          }
-        }}
-      >
-        {this.props.children}
-      </DrawerContext.Provider>
-    );
-  }
-}
-
+//TODO: clean this shit up it hurts my eyes
 class App extends Component {
   render() {
     return (

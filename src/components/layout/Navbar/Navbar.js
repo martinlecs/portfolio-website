@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
+import IconButton from '@material-ui/core/IconButton';
+import { withStyles } from '@material-ui/core/styles';
 import ToolBar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import { DrawerContext } from '../../../App';
-import LeftSideDrawer from './Drawer/LeftSideDrawer';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import { DrawerContext } from '../../context/DrawerContext';
+import LeftSideDrawer from './Drawer/LeftSideDrawer';
 
 const styles = theme => ({
   root: {

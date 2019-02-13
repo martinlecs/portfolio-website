@@ -1,14 +1,13 @@
-import React from "react";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import ListIcon from "@material-ui/icons/List";
-import Home from "@material-ui/icons/Home";
-import PermIdentity from "@material-ui/icons/PermIdentity";
-import { NavLink } from "react-router-dom";
-import SignIn from "../../../auth/SignIn";
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import Home from '@material-ui/icons/Home';
+import ListIcon from '@material-ui/icons/List';
+import PermIdentity from '@material-ui/icons/PermIdentity';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const SignedOutDrawerList = () => {
   return (

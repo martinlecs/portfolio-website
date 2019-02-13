@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
-import { DrawerContext } from "../../App";
+import { DrawerContext } from "../context/DrawerContext";
 
 const styles = theme => ({
   drawerHeader: {
