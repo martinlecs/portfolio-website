@@ -3,7 +3,6 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import CardComponent from "./CardComponent";
 import { connect } from "react-redux";
-import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 
 const styles = theme => ({
@@ -34,7 +33,6 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     projects: state.project.projects
   };
@@ -43,6 +41,5 @@ const mapStateToProps = state => {
 export default withStyles(styles)(
   compose(
     connect(mapStateToProps),
-    firestoreConnect([{ collection: "projects" }])
   )(Home)
 );
