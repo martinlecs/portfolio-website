@@ -1,7 +1,18 @@
-export const addProject = (project) => {
-  // the below params get passed in from top-level function
-  return (dispatch, getState) => {
+export const addProject = project => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
     // make async call to database
-    dispatch({type: 'ADD_PROJECT', project})
-  }
-}
+    const firestore = getFirestore();
+    firestore
+      .collection("projects")
+      .add({
+        ...project,
+        createdAt: new Date()
+      })
+      .then(() => {
+        dispatch({ type: "ADD_PROJECT", project });
+      })
+      .catch(err => {
+        dispatch({ type: "ADD_PROJECT_ERROR", err });
+      });
+  };
+};
