@@ -9,6 +9,8 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Paper from "@material-ui/core/Paper";
 
+import ProjectCard from "./ProjectCard";
+
 const styles = (theme) => ({
   main: {
     width: "auto",
@@ -90,39 +92,16 @@ class Sidebar extends Component {
             </Paper>
           </Grid>
 
-          <Grid className={classes.grid} item>
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis
-              cursus neque. Quisque pellentesque est eget odio maximus, posuere
-              consequat nunc fermentum. Sed vel ligula nisl. Suspendisse congue et
-              dolor aliquet consequat. Sed pharetra aliquet dui id tempus. Nam id
-              urna dui. Praesent eget efficitur libero. Donec interdum lorem at ex
-              dignissim volutpat. Fusce condimentum porta leo vitae aliquet.
-              Vivamus eget aliquet purus. Aenean odio nibh, rhoncus non egestas
-              viverra, maximus ac ligula. Proin non ligula quis felis sagittis
-              tincidunt vel sit amet velit. Donec id massa sit amet lorem cursus
-              mattis et eget turpis. Vivamus non fringilla elit. Cras bibendum
-              volutpat bibendum. Maecenas ac sollicitudin quam, sit amet dignissim
-              erat. Donec fringilla blandit volutpat. In maximus pellentesque
-              massa, a accumsan ex facilisis quis. Mauris feugiat mi id elit
-              bibendum sollicitudin. Phasellus sem arcu, aliquam nec consectetur
-              sed, semper sit amet turpis. Integer consectetur aliquam sem ornare
-              auctor. Vivamus dictum pretium quam. Nulla dignissim libero aliquet
-              est fermentum eleifend. Sed ultricies id lorem at vehicula. In hac
-              habitasse platea dictumst. Duis nibh lorem, aliquet id lorem non,
-              bibendum volutpat sapien. Suspendisse urna mauris, facilisis vitae
-              scelerisque eu, ornare ac velit. Aliquam erat volutpat. Fusce et
-              neque vel dui condimentum elementum. Nam ipsum magna, dapibus vitae
-              lorem quis, porta feugiat nisl. Ut posuere odio ligula, eget
-              porttitor quam pretium et. Orci varius natoque penatibus et magnis
-              dis parturient montes, nascetur ridiculus mus. Nullam lacinia purus
-              nunc, efficitur sollicitudin augue mollis id. Nulla rutrum eget
-              turpis dapibus maximus. Curabitur non lacus justo.
-            </Typography>
-          </Grid>
-
-          <Grid className={classes.grid} item>
-            
+          <Grid container spacing={16}>
+            <Grid item xs={12} md={4}>
+              <ProjectCard/>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <ProjectCard/>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <ProjectCard/>
+            </Grid>
           </Grid>
 
         </Grid>
