@@ -8,6 +8,8 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 
+//TODO: Make form consistent with how data is stored in firestore
+
 const styles = theme => ({
   card: {
     maxWidth: 275
@@ -22,20 +24,19 @@ class CardComponent extends Component {
   render() {
     const { classes } = this.props;
     const { data } = this.props;
-
     return (
       <Grid
         item
       >
         <Card className={classes.card}>
-          <CardHeader title={data.title} subheader={data.date} />
+          <CardHeader title={data.name} subheader="Today's date" />
           <CardMedia
             className={classes.media}
-            image={data.image}
-            title={data.imageTitle}
+            image={data.images}
+            title={data.name}
           />
           <CardContent>
-            <Typography component="p">{data.description}</Typography>
+            <Typography component="p">{data.summary}</Typography>
           </CardContent>
         </Card>
       </Grid>

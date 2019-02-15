@@ -4,6 +4,9 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { firestoreConnect} from 'react-redux-firebase';
+import {compose} from 'redux';
 
 const styles = theme => ({
   root: {
@@ -15,14 +18,14 @@ const styles = theme => ({
 
 class ProjectDetails extends Component {
   render() {
-    const slug = this.props.match.params.slug;
-    const { classes } = this.props;
+    const { classes, project } = this.props;
+    // CONDITIONAL TO CHECK IF PROJECT EXISTS YET, RETURN SOME SORT OF LOADING
     return (
       <Grid container spacing={16} direction="column">
         <Grid item>
           <Paper className={classes.root} elevation={1}>
             <Typography variant="h5" component="h3">
-              {slug}
+              {project && project.name}
             </Typography>
             <Typography component="p">
               Paper can be used to build a surface or other elements for your
@@ -84,8 +87,23 @@ class ProjectDetails extends Component {
   }
 }
 
+const mapStateToProps = (state, ownProps) => {
+  const slug = ownProps.match.params.slug;
+  const projects = state.firestore.data.projects;
+  const project = projects ? projects[slug] : null;
+  return {
+    project: project
+  }
+};
+
 ProjectDetails.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(ProjectDetails);
+export default compose(
+  withStyles(styles),
+  connect(mapStateToProps),
+  firestoreConnect([{
+    collection: 'projects'
+  }])
+)(ProjectDetails);

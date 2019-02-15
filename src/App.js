@@ -11,6 +11,7 @@ import Navbar from './components/layout/Navbar/Navbar';
 import AddProject from './components/projects/AddProject';
 import ProjectDetails from './components/projects/ProjectDetails';
 import { theme } from './components/themes/MuiTheme';
+import Sidebar from "./components/layout/Sidebar/Sidebar";
 
 //TODO: clean this shit up it hurts my eyes
 class App extends Component {
@@ -21,15 +22,16 @@ class App extends Component {
         <MyProvider>
           <BrowserRouter>
             <div className="App">
-              <Navbar />
+              {/*<Navbar />*/}
+              <Sidebar/>
               <Switch>
-                <Main>
-                  <Route exact path="/" component={Home} />
-                  <Route path="/project/:slug" component={ProjectDetails} />
-                  <Route path="/signin" component={SignIn} />
-                  <Route path="/signup" component={SignUp} />
-                  <Route path="/addproject" component={AddProject} />
-                </Main>
+                {/*<Main>*/}
+                  {/*<Route exact path="/" component={Home} />*/}
+                  {/*<Route path="/project/:slug" component={ProjectDetails} />*/}
+                  {/*<Route path="/signin" component={SignIn} />*/}
+                  {/*<Route path="/signup" component={SignUp} />*/}
+                  {/*<Route path="/addproject" component={AddProject} />*/}
+                {/*</Main>*/}
               </Switch>
             </div>
           </BrowserRouter>

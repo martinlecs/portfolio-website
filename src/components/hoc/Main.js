@@ -30,9 +30,6 @@ const styles = theme => ({
 });
 
 //TODO: HOC adds content shift functionality to component
-function withContentShift(WrappedComponent) {
-  return;
-}
 
 class Main extends Component {
   render() {

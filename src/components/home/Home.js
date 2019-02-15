@@ -4,6 +4,8 @@ import { withStyles } from "@material-ui/core/styles";
 import CardComponent from "./CardComponent";
 import { connect } from "react-redux";
 import { compose } from "redux";
+import { firestoreConnect} from 'react-redux-firebase';
+import { Link } from 'react-router-dom';
 
 const styles = theme => ({
   root: {
@@ -14,7 +16,6 @@ const styles = theme => ({
 class Home extends Component {
   render() {
     const { classes, projects } = this.props;
-
     return (
       <Grid
         container
@@ -24,8 +25,10 @@ class Home extends Component {
         justify="flex-start"
         alignItems="flex-start"
       >
-        {projects.map(card => (
-          <CardComponent key={card.id} data={card} />
+        {projects && projects.map(card => (
+          <Link to={'/project/' + card.id}>
+            <CardComponent key={card.id} data={card} />
+          </Link>
         ))}
       </Grid>
     );
@@ -34,12 +37,15 @@ class Home extends Component {
 
 const mapStateToProps = state => {
   return {
-    projects: state.project.projects
+    projects: state.firestore.ordered.projects
   };
 };
 
 export default withStyles(styles)(
   compose(
     connect(mapStateToProps),
+    firestoreConnect([
+      { collection: 'projects'}
+    ]),
   )(Home)
 );
