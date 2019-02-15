@@ -25,6 +25,7 @@ class App extends Component {
               {/*<Navbar />*/}
               <Sidebar/>
               <Switch>
+                <Route path="project/:slug" component={ProjectDetails}/>
                 {/*<Main>*/}
                   {/*<Route exact path="/" component={Home} />*/}
                   {/*<Route path="/project/:slug" component={ProjectDetails} />*/}

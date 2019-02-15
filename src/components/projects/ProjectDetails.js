@@ -22,65 +22,7 @@ class ProjectDetails extends Component {
     // CONDITIONAL TO CHECK IF PROJECT EXISTS YET, RETURN SOME SORT OF LOADING
     return (
       <Grid container spacing={16} direction="column">
-        <Grid item>
-          <Paper className={classes.root} elevation={1}>
-            <Typography variant="h5" component="h3">
-              {project && project.name}
-            </Typography>
-            <Typography component="p">
-              Paper can be used to build a surface or other elements for your
-              application.
-            </Typography>
-          </Paper>
-        </Grid>
 
-        <Grid item>
-          <Paper className={classes.root} elevation={1}>
-            <Typography variant="h5" component="h3">
-              Put images of app here
-            </Typography>
-            <Typography component="p">
-              Paper can be used to build a surface or other elements for your
-              application.
-            </Typography>
-          </Paper>
-        </Grid>
-
-        <Grid item>
-          <Paper className={classes.root} elevation={1}>
-            <Typography variant="h5" component="h3">
-              List of technologies used here
-            </Typography>
-            <Typography component="p">
-              Paper can be used to build a surface or other elements for your
-              application.
-            </Typography>
-          </Paper>
-        </Grid>
-
-        <Grid item>
-        <Paper className={classes.root} elevation={1}>
-          <Typography variant="h5" component="h3">
-            Detailed description of App
-          </Typography>
-          <Typography component="p">
-            Paper can be used to build a surface or other elements for your
-            application.
-          </Typography>
-        </Paper>
-      </Grid>
-
-        <Grid item>
-          <Paper className={classes.root} elevation={1}>
-            <Typography variant="h5" component="h3">
-              Social Media links
-            </Typography>
-            <Typography component="p">
-              Paper can be used to build a surface or other elements for your
-              application.
-            </Typography>
-          </Paper>
-        </Grid>
 
       </Grid>
     );
