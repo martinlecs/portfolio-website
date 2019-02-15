@@ -21,8 +21,8 @@ class ProjectGallery extends Component {
         />
         <Grid container spacing={16}>
           {["1", "2", "3", "4"].map(id => (
-            <Grid item xs={12} md={4} lg={3}>
-              <ProjectCard key={id} />
+            <Grid key={id} item xs={12} md={4} lg={3}>
+              <ProjectCard />
             </Grid>
           ))}
         </Grid>

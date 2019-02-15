@@ -24,10 +24,10 @@ class Sidebar extends Component {
           </Typography>
         </header>
         <List>
-          <ListItem button divider component={Link} to="addproject">
+          <ListItem button divider component={Link} to="/">
             Projects
           </ListItem>
-          <ListItem button divider component={Link} to="/">
+          <ListItem button divider component={Link} to="project/slug">
             Resume
           </ListItem>
           <ListItem button divider component={Link} to="/">
@@ -37,7 +37,7 @@ class Sidebar extends Component {
         <Grid className={classes.about} item>
           <Typography variant="h6">ABOUT</Typography>
           <Typography variant="subtitle1">
-            Australian product manager and general interactive media developer.
+            Australian product management and interactive media enthusiast.
           </Typography>
           <br />
           <Typography variant="subtitle1">
