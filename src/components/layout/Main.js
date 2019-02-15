@@ -5,6 +5,8 @@ import ProjectDetails from "../projects/ProjectDetails/ProjectDetails";
 import ProjectGallery from '../projects/ProjectGallery/ProjectGallery';
 import Sidebar from "./Sidebar";
 import withStyles from '@material-ui/core/styles/withStyles';
+import AddProject from "./../projects/AddProject";
+import Contact from "./../contact/Contact";
 
 const styles = (theme) => ({
   main: {
@@ -28,6 +30,7 @@ class Main extends Component {
               <Switch>
                 <Route exact path="/" component={ProjectGallery} />
                 <Route path="/project/:slug" component={ProjectDetails} />
+                <Route path="/contact" component={Contact} />
               </Switch>
             </Grid>
           </Grid>

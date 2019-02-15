@@ -27,10 +27,10 @@ class Sidebar extends Component {
           <ListItem button divider component={Link} to="/">
             Projects
           </ListItem>
-          <ListItem button divider component={Link} to="project/slug">
+          <ListItem button divider component={Link} to="/project/slug">
             Resume
           </ListItem>
-          <ListItem button divider component={Link} to="/">
+          <ListItem button divider component={Link} to="/contact">
             Contact
           </ListItem>
         </List>
